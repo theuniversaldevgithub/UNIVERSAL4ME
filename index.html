@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenant Login | Anjani Homes | Dev Ealiya</title>
+  <link rel="shortcut icon" href="Media/logo-transparent.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    window.onload = function () {
+      document.getElementById('preloader').style.display = "none";
+      document.getElementById('fullpagecontent').style.display = "block";
+    }
+    </script>
+</head>
+
+<body>
+  <div id="preloader">
+    <img src="Media/loader.gif" alt="loader">
+  </div>
+  
+  <!-- this is loader div for content -->
+  <!-- <div id="fullpagecontent">
+
+    <div id="welcomemodal" class="modal">
+      <div class="modal-content">
+        <img src="imp-message.webp" alt="disclaimer">
+        <h2>Important Message</h2>
+        <p class="unpaid"><strong>* Monu Pawar Unpaid Rent August 2024</strong></p>
+        <button id="closemodal">Close</button>
+      </div>
+    </div> -->
+ 
+
+    <div
+      class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+      aria-hidden="true">
+      <div
+        class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#070B2A] to-[#070B2A] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+
+    <div style="background-color: #070B2A;" class="pb-6 sm:pb-8 lg:pb-12">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <header class="mb-4 flex items-center justify-between py-4 md:py-8">
+          <!-- logo - start -->
+          <a href="#" class="logofont inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl"
+            aria-label="logo">
+            <img width="70rem" src="Media/logo-transparent.png" alt="logo-anjani-homes">UNIVERSAL 4 ME
+          </a>
+          <!-- logo - end -->
+          <!-- buttons - start -->
+          <nav class="hidden gap-12 lg:flex">
+            <a href="#" class="text-lg font-semibold text-white"><i class="fa-solid fa-house"></i> Home</a>
+
+            <a href="rules.html"  style="color: #a460f5;"
+              class="text-lg font-semibold transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-file"></i> Rules to Follow</a>
+
+            <a href="tel:+919907753379"  style="color: #a460f5;"
+              class="text-lg font-semibold transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-phone"></i> +91 9907753379</a>
+
+            <a download="Anjani Homes Dev Ealiya" href="app-debug.apk"  style="color: #a460f5;"
+              class="text-lg font-semibold transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-download"></i> Download App <i class="fa-brands fa-android"></i></a>
+
+            <a href="https://tenant-anjanihomes.great-site.net" target="_blank"  style="color: #a460f5;"
+              class="text-lg font-semibold transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-globe"></i> Website</a>
+          </nav>
+
+          <a href="payrent.html" class="hidden sm:block">
+            <button class="btn">
+              <span class="btn-text-one"><i class="fa-solid fa-indian-rupee-sign"></i> Pay Rent</span>
+              <span class="btn-text-two">Great!</span>
+            </button>
+          </a>
+
+          <button id="menuButton" type="button"
+            class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd" />
+            </svg>
+            Menu
+          </button>
+
+          <nav style="font-family: manrope;" id="mainNav"
+            class="absolute top-14 w-full mt-10 bg-white shadow-lg rounded-lg py-2 z-10 hidden lg:hidden flex flex-col">
+            <a href="#" class="text-lg font-semibold text-orange-600"><i class="fa-solid fa-house"></i> Home</a>
+
+            <a href="rules.html"
+              class="text-lg font-semibold text-gray-900 transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-file"></i> Rules to Follow</a>
+
+            <a href="tel:+919907753379"
+              class="text-lg font-semibold text-gray-900 transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-phone"></i> +91 9907753379</a>
+
+            <a download="Anjani Homes Dev Ealiya" href="app-debug.apk"
+              class="text-lg font-semibold text-gray-900 transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-download"></i> Download App <i class="fa-brands fa-android"></i></a>
+
+            <a href="https://tenant-anjanihomes.great-site.net" target="_blank"
+              class="text-lg font-semibold text-gray-900 transition duration-100 hover:text-orange-600"><i
+                class="fa-solid fa-globe"></i> Website</a>
+          </nav>
+          <!-- buttons - end -->
+        </header>
+
+        <section
+          class="min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 py-16 shadow-lg md:py-20 xl:py-48">
+          <!-- image - start -->
+          <img src="Media/hero-bg.jpg" loading="lazy" alt="Hero Bg"
+            class="absolute inset-0 w-full object-cover object-center" />
+          <!-- image - end -->
+
+          <!-- overlay - start -->
+          <!-- <div class="absolute inset-0 bg-orange-500 mix-blend-multiply"></div> -->
+          <!-- overlay - end -->
+
+        </section>
+      </div>
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+<div style="background-color: #070B2A;" class="flex pt-12 px-6 md:px-20  items-center justify-center bg-hero md:h-screen overflow-hidden">
+  <div class="flex flex-col  gap-6 md:flex-row items-center max-w-8xl">
+        <div class="w-full md:w-1/2 lg:pr-32">
+          <h2 style="color: #a460f5;" class="text-4xl lg:text-5xl text-center md:text-left leading-tight font-medium">There’s a
+                better way to talk with your customers.</h2>
+                <h3
+                class="sub-text mt-6 md:mt-10 text-md lg:text-xl text-center md:text-left  font-light tracking-wider leading-relaxed">
+                Help Scout is designed with your customers in mind. Provide email and live chat with a personal touch,
+                and deliver help content right where your customers need it, all in one place, all for one low price.
+              </h3>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start">
+              <!-- <button class="w-full sm:w-40 px-4 py-3 rounded font-semibold text-md bg-blue-500 text-white border-2 border-blue-500">Get started</button>
+              <button class="w-full mt-4 sm:mt-0 sm:ml-4 sm:w-40 px-4 py-3 rounded font-semibold text-md bg-white text-blue-500 border-2 border-gray-500">Watch a Demo</button> -->
+              <!-- From Uiverse.io by cssbuttons-io --> 
+               <a href=""><button class="glowbtn"> Button</button></a>
+
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+            <!-- <img src="https://loremflickr.com/g/600/600/girl"> -->
+            <video width="100%" height="150%" class="bg video" autoplay muted loop>
+              <source src="Media/video.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+</div>
+
+
+    <main style="background-color: #070B2A;" class="">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-blue-900 to-indigo-800 text-white overflow-hidden">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('Media/cambg.jpg');"></div>
+            
+            <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <!-- Left Side: Company Info -->
+                    <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                            Innovate.<br>Transform.<br>Succeed.
+                        </h1>
+                        <p class="text-xl mb-8 text-gray-300">Empowering businesses with cutting-edge solutions for a digital future.</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#" class="bg-white text-blue-900 font-semibold px-8 py-3 rounded-full hover:bg-blue-100 transition duration-300 text-center">Get Started</a>
+                            <a href="#" class="border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition duration-300 text-center">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Features -->
+                    <div class="w-full md:w-1/2 md:pl-12">
+                        <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-2xl">
+                            <h2 class="text-2xl font-semibold mb-6">Why MyCompany?</h2>
+                            <ul class="space-y-4">
+                                <li class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <span>Lightning-fast Performance</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    <span>Bank-grade Security</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-6 h-6 mr-3 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                                    <span>AI-powered Insights</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Decorative Element -->
+            <div style="background-color: #070B2A;" class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="indigo"/>
+                </svg>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
+    <h2 style="color: #a460f5;" class="mb-1 text-3xl font-extrabold leading-tight">Services</h2>
+    <p class="mb-12 text-lg text-white">Here is a few of the awesome Services we provide.</p>
+    <div class="w-full">
+        <div class="flex flex-col w-full mb-10 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+                <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                    <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-indigo-500 rounded-lg"></span>
+                    <div class="relative h-full p-5 bg-white border-2 border-indigo-500 rounded-lg">
+                        <div class="flex items-center -mt-1">
+                            <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">DAPP Development</h3>
+                        </div>
+                        <p class="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">------------</p>
+                        <p class="mb-2 text-gray-600">A decentralized application (dapp) is an application built on a
+                            decentralized network that combines a smart contract and a frontend user interface.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="relative h-full ml-0 md:mr-10">
+                    <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-purple-500 rounded-lg"></span>
+                    <div class="relative h-full p-5 bg-white border-2 border-purple-500 rounded-lg">
+                        <div class="flex items-center -mt-1">
+                            <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Web 3.0 Development</h3>
+                        </div>
+                        <p class="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">------------</p>
+                        <p class="mb-2 text-gray-600">Web 3.0 is the third generation of Internet services that will
+                            focus on understanding and analyzing data to provide a semantic web.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col w-full mb-5 sm:flex-row">
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+                <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                    <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"></span>
+                    <div class="relative h-full p-5 bg-white border-2 border-blue-400 rounded-lg">
+                        <div class="flex items-center -mt-1">
+                            <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Project Audit</h3>
+                        </div>
+                        <p class="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">------------</p>
+                        <p class="mb-2 text-gray-600">A Project Audit is a formal review of a project, which is intended
+                            to assess the extent up to which project management standards are being upheld.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
+                <div class="relative h-full ml-0 mr-0 sm:mr-10">
+                    <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-yellow-400 rounded-lg"></span>
+                    <div class="relative h-full p-5 bg-white border-2 border-yellow-400 rounded-lg">
+                        <div class="flex items-center -mt-1">
+                            <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Hacking / RE</h3>
+                        </div>
+                        <p class="mt-3 mb-1 text-xs font-medium text-yellow-400 uppercase">------------</p>
+                        <p class="mb-2 text-gray-600">A security hacker is someone who explores methods for breaching
+                            defenses and exploiting weaknesses in a computer system or network.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full sm:w-1/2">
+                <div class="relative h-full ml-0 md:mr-10">
+                    <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded-lg"></span>
+                    <div class="relative h-full p-5 bg-white border-2 border-green-500 rounded-lg">
+                        <div class="flex items-center -mt-1">
+                            <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Bot/Script Development</h3>
+                        </div>
+                        <p class="mt-3 mb-1 text-xs font-medium text-green-500 uppercase">------------</p>
+                        <p class="mb-2 text-gray-600">Bot development frameworks were created as advanced software tools
+                            that eliminate a large amount of manual work and accelerate the development process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section style="background-color: #070B2A;" class="text-gray-400 -mt-24">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <div class="flex flex-wrap  lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
+          <div class="w-full sm:p-4 px-4 mb-6">
+            <h1 style="color: #a460f5;" class="title-font sm:text-4xl text-3xl mb-4 font-medium">Our Statistic</h1>
+            <div class="leading-relaxed sub-text">Take a look at our wonderfull service statistic.</div>
+          </div>
+          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 style="color: #a460f5;" class="title-font font-medium text-3xl">13</h2>
+            <p class="leading-relaxed text-white">Happy Customers</p>
+          </div>
+          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 style="color: #a460f5;" class="title-font font-medium text-3xl">15</h2>
+            <p class="leading-relaxed text-white">Customers Served</p>
+          </div>
+          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 style="color: #a460f5;" class="title-font font-medium text-3xl">2</h2>
+            <p class="leading-relaxed text-white">Flats</p>
+          </div>
+          <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+            <h2 style="color: #a460f5;" class="title-font font-medium text-3xl">2</h2>
+            <p class="leading-relaxed text-white">Shops</p>
+          </div>
+        </div>
+        <div class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
+          <img class="object-cover object-center w-full h-full" src="Media/camera.jpg" alt="camera">
+        </div>
+      </div>
+    </section>
+    
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img width="60rem" src="Media/logo-transparent.png" alt="logo-anjani-homes">
+          <span class="logofont text-xl font-bold text-white md:text-2xl">&nbsp; UNIVERSAL 4 ME</span></a>
+          <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+            <script>document.write("" + new Date().getFullYear(), "");</script> UNIVERSAL 4 ME | | DEV EALIYA |
+        </p>
+          <p class="text-sm text-white sm: sm:py-2 sm:mt-0 mt-4">&nbsp;DARSHANA BIDUA | All rights
+          reserved&nbsp;
+        </p>
+        <a href="https://theuniversaldev.42web.io" class="ml-1" target="_blank">
+        <p style="color: #a460f5;">Powered By <b>Dev
+              Ealiya</b></a>
+        </p>
+      </div>
+    </footer>
+    
+    <!-- script for modal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("welcomemodal");
+        const closemodalButton = document.getElementById("closemodal");
+
+        // Show the modal on page load
+        modal.style.display = "block";
+
+        // Close the modal when the close button is clicked
+        closemodalButton.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+
+        // Close the modal when the overlay is clicked
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+
+    <!-- script for new menu navigation tailwind css -->
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mainNav = document.getElementById('mainNav');
+
+      menuButton.addEventListener('click', function () {
+        mainNav.classList.toggle('hidden'); // Toggle the 'hidden' class on small screens
+      });
+    </script>
+
+
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
