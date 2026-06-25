@@ -12,7 +12,7 @@
   font-family: 'Teko', sans-serif;
 }
 
-/* From Uiverse.io by cssbuttons-io */
+
 .glowbtn {
   --glow-color: rgb(217, 176, 255);
   --glow-spread-color: rgba(191, 123, 255, 0.781);
@@ -105,19 +105,16 @@
 .btn {
   width: 146px;
   height: 50px;
-  /* background: linear-gradient(to top, #5eae63, #429f47, #51a454); */
-  /* background: linear-gradient(to top, #ea5f02, #FF6601, #d85700); */
-  /* background: linear-gradient(to top, #00154c, #12376e, #23487f); */
-  /* background-color: #1ca3ff; */
-  background-color: #a460f5;
+background: linear-gradient(to top, #c084fc, #7c3aed, #312e81);
+  /* background-color: #a460f5; */
   color: white;
   border-radius: 50px;
   border: none;
   outline: none;
   cursor: pointer;
   position: relative;
-  font-style: bold;
-  /* box-shadow: 0 15px 30px green; */
+  font-style: bolder;
+  box-shadow: 0 15px 30px purple;
   overflow: hidden;
 }
 
